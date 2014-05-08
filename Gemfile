@@ -13,5 +13,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'sqlite3',    group: :test, group: :development
-gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+
+#Do not use turbolinks until it's compatible with everything else
+#gem 'turbolinks'
