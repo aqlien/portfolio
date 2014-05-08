@@ -7,7 +7,6 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
-# require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,13 +14,10 @@ Bundler.require(*Rails.groups)
 
 module Portfolio
   class Application < Rails::Application
-<<<<<<< HEAD
-=======
-
     config.generators do |g|
       g.test_framework :minitest, spec: true
     end
->>>>>>> 037d4d63683f07d63735b923b74b56644102af7f
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
