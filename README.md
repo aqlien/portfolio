@@ -1,6 +1,8 @@
 Author: Alex Quel Lien
 Portfolio
 
+![Codeship Status](https://www.codeship.io/projects/0d23fde0-b931-0131-2051-6e04503967cb/status)
+
 This app is intended to be used for my personal site.
 The style uses Zurb's Foundation framework, and the general setup was based on [Railscast episode 417](http://railscasts.com/episodes/417-foundation?view=asciicast).
 
