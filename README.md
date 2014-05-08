@@ -2,6 +2,8 @@ Author: Alex Quel Lien
 Portfolio
 
 This app is intended to be used for my personal site.
+The style uses Zurb's Foundation framework, and the general setup was based on [Railscast episode 417](http://railscasts.com/episodes/417-foundation?view=asciicast).
+
 A preview of the site's current homepage follows:
 
 ![Homepage Screenshot](https://raw.githubusercontent.com/aqlien/portfolio/blog_post/app/assets/images/readme/homepage_screenshot.png)
