@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def create
     @project = Project.new(project_params)
@@ -7,7 +7,8 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Project has been created."
       redirect_to @project
     else
-      # we'll get to this in a bit
+      flash.now[:error] =  "Project could not be saved."
+      render :new
     end
   end
 
@@ -27,6 +28,17 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to projects_url, flash[:notice] => "Project has been destroyed."}
       format.json { head :no_content }
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @project.update_attributes(project_params)
+      redirect_to @project, notice: 'Project was successfully updated.'
+    else
+      render :edit
     end
   end
 

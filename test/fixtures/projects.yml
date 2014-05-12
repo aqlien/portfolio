@@ -1,0 +1,7 @@
+portfolio:
+  name: Code Fellows Portfolio
+  technologies_used: Ruby, Rails, Zurb, Javascript
+
+freelance:
+  name: Pharmacy Database
+  technologies_used: Ruby, Rails, Zurb, Python
