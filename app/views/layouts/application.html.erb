@@ -18,17 +18,23 @@
         </ul>
         <section class="left-nav-section">
           <%= link_to "Blog Posts", posts_path %>
+          <%= link_to "Projects", projects_path %>
         </section>
       </nav>
     </div>
     <!-- provide space for the top bar -->
     <div class="row">
-      <div class="small-12 column"><div>
-    <div>
-    <div class="row">
-      <div class="small-2 column">About Me</div>
-      <div class="small-10 column"><%= yield %></div>
-    </div>
-    <%= javascript_include_tag "application" %>
+      <div class="small-12 column">
+        <% flash.each do |key, value| %>
+        <div class="alert-box round <%= flash_class(key) %>">
+          <%= value %>
+        </div>
+        <% end %>
+      </div>
+        <div class="row">
+          <div class="small-2 column">About Me</div>
+          <div class="small-10 column"><%= yield %></div>
+        </div>
+        <%= javascript_include_tag "application" %>
   </body>
 </html>
