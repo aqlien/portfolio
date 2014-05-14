@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
   skip_before_action :verify_authenticity_token, only: :destroy
 
   # GET /posts
@@ -31,6 +32,7 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
+        current_user.posts << @post
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
