@@ -15,6 +15,11 @@
   <%= @post.body %>
 </p>
 
+<p id="status">
+  <b>Status:</b>
+  <%= @post.published? ? "Published" : "Unpublished" %>
+</p>
+
 <%= link_to 'Edit', edit_post_path(@post), class: "button radius" %>
 <%= link_to 'Back', posts_path, class: "button radius" %>
 <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "button radius" %>

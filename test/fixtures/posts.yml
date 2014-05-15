@@ -2,18 +2,18 @@
 lp:
   title: so horrible
   body: LOL YOLO
-  author: Admin
+  author: editor
 
 #Awesome post!
 ap:
   title: Awesome Post!
   body: A dragon in a spaceship, rocking out on an electric guitar.
-  author: Admin
+  author: editor
 
 #Boring post
 <% 3.times do |index| %>
 bp<%= index %>:
   title: This is a test post
   body: post for testing, testing post, testing testing
-  author: Admin
+  author: editor
 <% end %>
