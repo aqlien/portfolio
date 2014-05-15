@@ -16,4 +16,14 @@ feature "Creating a Post" do
     page.wont_have_content "New post"
     page.text.must_include "Status: Unpublished"
   end
+
+  scenario "unauthenticated site visitors cannot visit new_post_path" do
+    visit new_post_path
+    page.must_have_content "You need to sign in or sign up before continuing"
+  end
+
+  scenario "unauthenticated site vistiors cannot see new post button" do
+    visit posts_path
+    page.wont_have_link "New Post"
+  end
 end
