@@ -1,6 +1,9 @@
-Admin:
+editor:
   email: admin@localhost.com
-  encrypted_password: <%= User.new.send(:password_digest, 'superpassword') %>
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: editor
 
-Buddy:
-  email: value@valueware.org
+author:
+  email: friend@localhost.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: author
