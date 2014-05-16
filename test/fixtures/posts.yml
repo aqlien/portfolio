@@ -3,12 +3,14 @@ lp:
   title: so horrible
   body: LOL YOLO
   author: editor
+  published: true
 
 #Awesome post!
 ap:
   title: Awesome Post!
   body: A dragon in a spaceship, rocking out on an electric guitar.
   author: editor
+  published: true
 
 #Boring post
 <% 3.times do |index| %>
@@ -16,4 +18,5 @@ bp<%= index %>:
   title: This is a test post
   body: post for testing, testing post, testing testing
   author: editor
+  published: true
 <% end %>

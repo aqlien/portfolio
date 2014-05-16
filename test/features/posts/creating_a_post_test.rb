@@ -27,7 +27,6 @@ feature "Creating a Post" do
 
   scenario "unauthenticated site vistiors cannot see new post button" do
     visit posts_path
-    save_and_open_page
     page.wont_have_content "New Post"
   end
 end
