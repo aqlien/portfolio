@@ -5,11 +5,26 @@
   <%= @post.title %>
 </p>
 
+<p id="author">
+  <strong>By:</strong>
+  <%= @post.author.email %>
+</p>
+
 <p>
   <strong>Body:</strong>
   <%= @post.body %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post), class: "button radius" %>
+<p id="status">
+  <b>Status:</b>
+  <%= @post.published? ? "Published" : "Unpublished" %>
+</p>
+
+
 <%= link_to 'Back', posts_path, class: "button radius" %>
-<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "button radius" %>
+<% if policy(@post).update? %>
+  <%= link_to 'Edit', edit_post_path(@post), class: "button radius" %>
+<% end %>
+<% if policy(@post).destroy? %>
+  <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "button radius" %>
+<% end %>

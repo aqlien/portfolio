@@ -21,6 +21,14 @@
   <div class="small-9 column"><%= f.text_field :body %></div>
 </div>
 </p>
+<% if PostPolicy.new(current_user, @post).publish? %>
+<p>
+<div class="field">
+  <%= f.label :published %>
+  <%= f.check_box :published %>
+</div>
+</p>
+<% end %>
 <p>
 <div class="row collapse">
   <div class="small-3 column"><%= f.submit class: "button radius"%></div>
