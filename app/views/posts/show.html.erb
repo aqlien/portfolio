@@ -20,7 +20,36 @@
   <%= @post.published? ? "Published" : "Unpublished" %>
 </p>
 
+<p id="comments">
+  <% @post.comments.each do |comment| %>
+    <% if comment.approved? %>
+    <%= comment.author %> |
+    <%= comment.content %>
+    <% end %>
+  <% end %>
+</p>
+<p>
+<strong>Add a comment:</strong>
+<%= form_for([@post, @post.comments.build]) do |c| %>
+  <%= c.label :content %>
+  <%= c.text_area :content %>
+  <%= c.submit("Submit comment") %>
+<% end %>
+</p>
+<p id="pending">
+<% if policy(@post).update? && @post.comments.present? %>
+  <h3>Pending comments:</h3><br>
+  <% @post.comments.each do |comment| %>
+    <% if comment.id.present? && !comment.approved? %>
+      <%= comment.author %>
+      <%= comment.content %>
+      <%= link_to "Approve comment", post_comment_path(@post, comment, :approved => true), method: :patch  %>
+    <% end %>
+  <% end %>
+<% end %>
 
+</p>
+<br>
 <%= link_to 'Back', posts_path, class: "button radius" %>
 <% if policy(@post).update? %>
   <%= link_to 'Edit', edit_post_path(@post), class: "button radius" %>

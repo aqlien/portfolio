@@ -1,0 +1,8 @@
+com1:
+ post: bp2
+ content: Testing is cool! Keep it up!
+
+com2:
+ post: bp1
+ content: Yeah testing lol swag
+ approved: false

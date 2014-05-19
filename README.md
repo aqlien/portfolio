@@ -16,3 +16,6 @@ I'm working on adding a blog post system, a preview of the current implementatio
 ![Blog Screenshot](https://github.com/aqlien/portfolio/blob/master/app/assets/images/readme/blog_screenshot.png)
 
 Of course, a blog needs some kind of authentication in order to prevent everyone with the address from posting, so I'm working on adding one with the Devise gem.
+
+###Sources:
+The footer received some help from [CSS Sticky Footer](http://www.cssstickyfooter.com/using-sticky-footer-code.html).

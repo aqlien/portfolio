@@ -8,10 +8,21 @@ class PostPolicy
   end
 
   class Scope
+    attr_reader :user, :scope
     def initialize(user, scope)
-      @user = user
+      @user = User.new()
+      @user = user if !user.nil?
       @scope = scope
     end
+
+    def resolve
+      if @user.editor?
+        @scope.all
+      else
+        @scope.where(published: true)
+      end
+    end
+
   end
 
   def new?

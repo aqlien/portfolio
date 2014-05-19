@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "I want to sign up to my website" do
   scenario "sign up with valid info" do
-    visit root_path
+    visit posts_path
     click_on "Sign up"
 
     fill_in "Email", with: "testy@mctesterson.com"
