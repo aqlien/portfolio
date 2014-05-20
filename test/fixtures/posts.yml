@@ -20,3 +20,9 @@ bp<%= index %>:
   author: editor
   published: true
 <% end %>
+
+up:
+  title: This post should not be published
+  body: I'm invisible!
+  author: author
+  published: false

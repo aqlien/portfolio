@@ -35,7 +35,9 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:post_id, :content, :author, :author_id, :author_email, :user_agent, :user_ip, :referrer, :approved)
+    params.require(:comment).permit(:post_id, :content, :author, :author_id,
+      :author_email, :user_agent, :user_ip, :referrer,
+      (:approved if PostPolicy.new(current_user, @post).publish?))
   end
 
   def find_post
