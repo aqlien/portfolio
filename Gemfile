@@ -2,10 +2,12 @@ source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem "devise"
+gem "figaro"
 gem "foundation-rails"
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem "minitest-rails"
+gem "omniauth-twitter"
 gem "pundit"
 gem 'rails', '4.1.0'
 gem 'sass-rails', '~> 4.0.3'
