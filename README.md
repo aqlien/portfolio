@@ -14,3 +14,5 @@ This welcome page will change in the future.
 
 I'm working on adding a blog post system, a preview of the current implementation follows:
 ![Blog Screenshot](https://github.com/aqlien/portfolio/tree/zurb/app/assets/images/readme/blog_screenshot.png)
+
+Of course, a blog needs some kind of authentication in order to prevent everyone with the address from posting, so I'm working on adding one with the Devise gem.
