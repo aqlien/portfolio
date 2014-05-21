@@ -9,20 +9,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div>
-      <nav class="top-bar" data-topbar>
-        <ul class="title-area">
-          <li class="name">
-            <h1><%= link_to "Portfolio", root_path %></h1>
-          </li>
-        </ul>
-        <section class="left-nav-section">
-          <%= link_to "Blog Posts", posts_path %>
-          <%= link_to "Projects", projects_path %>
-        </section>
-      </nav>
-    </div>
-    <!-- provide space for the top bar -->
+  <div id="wrap">
     <div class="row">
       <div class="small-12 column">
         <% flash.each do |key, value| %>
@@ -31,10 +18,33 @@
         </div>
         <% end %>
       </div>
-        <div class="row">
-          <div class="small-2 column">About Me</div>
-          <div class="small-10 column"><%= yield %></div>
-        </div>
-        <%= javascript_include_tag "application" %>
+    </div>
+    <div id="main" class="row">
+      <div class="small-10 column"><%= yield %></div>
+      <div class="small-2 column">About Me
+      <ul>
+        <li><%= link_to "My Blog Posts", posts_path %></li>
+        <li><%= link_to "My Projects", projects_path %></li>
+      </ul>
+      </div>
+    </div>
+  </div>
+  <div id="footer" class="fixed">
+    <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name"><h1><%= link_to "Portfolio", root_path %></h1></li>
+      <li><%= debug(params) %></li>
+    </ul>
+    <section class="left-nav-section">
+
+    </section>
+    </nav>
+  </div>
+  <%= javascript_include_tag "application" %>
+  <!--[if !IE 7]>
+  <style type="text/css">
+    #wrap {display:table;height:100%}
+  </style>
+  <![endif]-->
   </body>
 </html>

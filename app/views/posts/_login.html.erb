@@ -1,0 +1,6 @@
+<% if current_user.present? %>
+  <%= link_to "Finished? Sign out", destroy_user_session_path, method: :delete  %>
+<% else %>
+  <%= link_to "New user? Sign up!", new_user_registration_path %> <br>
+  <%= link_to "Done that? Sign in", new_user_session_path %>
+<% end %>
