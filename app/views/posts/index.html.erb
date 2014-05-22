@@ -15,8 +15,12 @@
         <td><%= post.title %></td>
         <td><%= post.body %></td>
         <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if policy(post).update? %>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <% end %>
+        <% if policy(post).destroy? %>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +28,6 @@
 
 <br>
 
+<% if PostPolicy.new(current_user, @post).create? %>
 <%= link_to 'New Post', new_post_path, class: "button radius" %>
+<% end %>

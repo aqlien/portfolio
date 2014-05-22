@@ -17,12 +17,17 @@
           </li>
         </ul>
         <section class="left-nav-section">
-          <%= link_to "Blog Posts", posts_path %>
-          <%= link_to "Projects", projects_path %>
+
+          <% if current_user.present? %>
+          <%= link_to "Finished? Sign out", destroy_user_session_path, method: :delete  %>
+          <% else %>
+          <%= link_to "New user? Sign up!", new_user_registration_path %>
+          <%= link_to "Done that? Sign in", new_user_session_path %>
+          <% end %>
         </section>
       </nav>
     </div>
-    <!-- provide space for the top bar -->
+    <!-- provide space for the alert notices -->
     <div class="row">
       <div class="small-12 column">
         <% flash.each do |key, value| %>
@@ -32,7 +37,12 @@
         <% end %>
       </div>
         <div class="row">
-          <div class="small-2 column">About Me</div>
+          <div class="small-2 column">About Me
+          <ul>
+            <li><%= link_to "My Blog Posts", posts_path %></li>
+            <li><%= link_to "My Projects", projects_path %></li>
+          </ul>
+          </div>
           <div class="small-10 column"><%= yield %></div>
         </div>
         <%= javascript_include_tag "application" %>

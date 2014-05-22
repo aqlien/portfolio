@@ -2,6 +2,8 @@ require "test_helper"
 
 feature "Editing a Post" do
   scenario "changing an existing post" do
+    sign_in
+
     visit post_path posts(:lp)
     click_on "Edit"
     fill_in "post_title", with: posts(:ap).title
